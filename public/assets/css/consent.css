@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+  background-color: #fff;
+  max-width: 312px;
+  text-align: justify;
+  padding: 34px 24px;
+  border-radius: 0.5rem;
+  box-shadow: 4px 3px 12px #d8d8d8;
+
+  display: flex; /* By default display none */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: justify;
+}
+
+.notice-wrapper {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 10px;
+}
+
+.consent-checkbox {
+  margin-top: 1.25rem;
+}
+
+.consent-content {
+  color: #344054;
+  background: #f5f7fa;
+  padding: 18px;
+  height: 370px;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  column-gap: 10px;
+  margin-top: 18px;
+}
+
+.cancel-btn,
+.continue-btn {
+  display: block;
+  border: 0;
+  cursor: pointer;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 18px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.cancel-btn {
+  background-color: #fff;
+  border: 1px solid #d0d5dd;
+}
+
+.continue-btn {
+  background-color: #2b70c5;
+  border: 0;
+  color: #fff;
+}
+
+.continue-btn:disabled,
+.continue-btn[disabled] {
+  background-color: #ccc;
+  color: #444;
+  cursor: alias;
+}
+
+.btn {
+  display: block;
+  margin-top: 1rem;
+  width: 250px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #dde6ed;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9db2bf;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #27374d;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/consent.css"
+    />
+    <title>Consent page</title>
+  </head>
+  <body>
+    <% if (content || errorContent) { %>
+    <div
+      class="wrapper"
+      id="consent-box"
+    >
+      <img
+        src="assets/common/consent-img.svg"
+        alt="Consent image"
+      />
+      <div class="notice-wrapper">
+        <div
+          class="consent-content"
+          id="consent-content"
+        > 
+          <%if (content) { %>
+            <p class="content">
+              <%= content %>
+            </p>
+          <input
+            type="checkbox"
+            name="consent"
+            class="consent-checkbox"
+            id="consent-checkbox"
+          />
+          I agree to give permission to centrum to share my data for auto
+          process execution.
+          <% } else if (errorContent) { %>
+            <%= errorContent %>
+          <% } %>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <input
+          type="button"
+          value="Cancel"
+          id="cancel-btn"
+          class="cancel-btn"
+        />
+        <input
+          type="button"
+          value="Continue"
+          id="continue-btn"
+          class="continue-btn"
+          disabled
+        />
+      </div>
+    </div>
+    <% } else if (info) { %>
+      <h3>Go back</h3>
+    <% } %>
+
+    <script src="https://staging.voltmoney.in/sdk/VoltMoney-sdk-v1.3.js"></script>
+    <script src="/services/consent.service.js"></script>
+
+    <%if (info) { %>
+      <script>
+        const sdkObj = new Volt({
+          environment: "staging",
+          pColor: "#1450A3",
+          target: "account",
+          voltPlatformCode: "<%= info.platformCode %>",
+          tracking: { utmSource: "", utmCampaign: "", utmTerm: "", utmMedium: "" },
+          customerSsoToken: "<%= info.customerSsoToken %>",
+          divId: "voltmoney-frame",
+          launchMode: "popup"
+        });
+
+        window.volt = sdkObj;
+        sdkObj.submit("<%= info.authToken %>", "<%= info.customerCode %>", "<%= info.customerSsoToken %>");
+      </script>
+    <% } %>
+  </body>
+</html>

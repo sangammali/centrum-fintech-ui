@@ -1,0 +1,174 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.wrapper {
+  margin: 12px 16px;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-section-heading {
+  margin-top: 8px;
+  color: #7a7a7a;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.fintech-logo {
+  margin-top: 12px;
+}
+
+/* Features Section */
+.features-section,
+.plan-section {
+  margin-top: 16px;
+}
+
+.features-heading,
+.plan-heading {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.features-card-wrapper {
+  display: flex;
+  column-gap: 8px;
+  overflow-x: scroll;
+}
+
+.feature-card {
+  flex: 0 0 200px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px #f3f3f3;
+}
+
+.feature-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.feature-card-desc {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #7a7a7a;
+}
+
+/* Plan Section */
+.plan-wrapper {
+  padding: 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  margin-top: 8px;
+  box-shadow: 0 0 5px #f3f3f3;
+}
+
+.product-title {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.product-desc {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #7a7a7a;
+}
+
+.plan-card-wrapper {
+  margin-top: 8px;
+  display: flex;
+  column-gap: 8px;
+  overflow-x: auto;
+}
+
+.plan-card {
+  flex: 0 0 250px;
+  padding: 16px;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plan-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.checklist-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin: 8px 0;
+}
+
+.checkmark-icon {
+  margin-top: 4px;
+}
+
+.checklist-item {
+  display: flex;
+  column-gap: 8px;
+  align-items: start;
+}
+
+.checklist-item-desc {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #7a7a7a;
+}
+
+.plan-price {
+  letter-spacing: 1px;
+}
+
+.plan-price,
+.plan-tenure {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.plan-tenure {
+  color: #8b8b8b;
+  margin-top: 4px;
+}
+
+.fintech-btn {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #fff;
+  background-color: #244c9b;
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+}

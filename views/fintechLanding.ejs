@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/main.css"
+    />
+    <title>Centrum - <%= fintechName %></title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top-section">
+        <img
+          src="/assets/common/logo-centrum.svg"
+          alt="Centrum Logo"
+        />
+        <p class="top-section-heading"><%= header.tag_line %></p>
+        <img
+          src="/assets/<%= fintechName %>/logo.svg"
+          class="fintech-logo"
+          alt="<%= fintechName %> Logo"
+        />
+      </div>
+
+      <!-- Feature Section -->
+      <div class="features-section">
+        <h3 class="features-heading">Features</h3>
+        <div class="features-card-wrapper">
+          <% features.forEach(feature => { %>
+          <div class="feature-card">
+            <h3 class="feature-card-title"><%= feature.title %></h3>
+            <p class="feature-card-desc"><%= feature.description %></p>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Plan Section -->
+      <div class="plan-section">
+        <h3 class="plan-heading">Plan</h3>
+        <div class="plan-wrapper">
+          <img
+            src="/assets/<%= fintechName %>/<%= intro.logo %>.svg"
+            class="product-logo"
+            alt="Plan logo"
+          />
+          <h3 class="product-title"><%= intro.title %></h3>
+          <p class="product-desc"><%= intro.heading_1 %></p>
+
+          <div class="plan-card-wrapper">
+            <% plan.forEach(pln => { %>
+            <div class="plan-card">
+              <div class="plan-card-top">
+                <h3 class="plan-card-title"><%= pln.name %></h3>
+                <div class="checklist-wrapper">
+                  <% pln.checklist.forEach(desc => { %>
+                  <div class="checklist-item">
+                    <img
+                      src="/assets/common/check.svg"
+                      class="checkmark-icon"
+                      alt="Check Mark"
+                    />
+                    <p class="checklist-item-desc"><%= desc %></p>
+                  </div>
+                  <% }); %>
+                </div>
+              </div>
+              <div class="plan-card-bottom">
+                <h3 class="plan-price">₹ <%= pln.amount %></h3>
+                <h2 class="plan-tenure"><%= pln.tenure %></h2>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+          <button
+            class="fintech-btn"
+            id="fintech-btn"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/services/consentRedirect.service.js"></script>
+  </body>
+</html>
