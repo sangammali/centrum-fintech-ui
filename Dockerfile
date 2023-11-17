@@ -1,4 +1,4 @@
-FROM node:18.12.0-alpine
+FROM 894185188610.dkr.ecr.ap-south-1.amazonaws.com/centrum:18.12.0
 WORKDIR /app
 COPY . .
 RUN mkdir -p src/log
